@@ -10,14 +10,14 @@ namespace SnakeAndLadderSimulator
         public const int LADDER = 2;
         public const int SNAKE = 3;
         //Returns Output Of Die Roll
-        public static int rollTheDie()
+        public static int RollTheDie()
         {
             Random random = new Random();
             int numOnDie = random.Next(1, 7);
             return numOnDie;
         }
         //Returns Increment Or Decrement to be Made with Current Position
-        public static int newPosition(int numOnDie)
+        public static int NewPosition(int numOnDie)
         {
             int toAdd = 0;
             Random random = new Random();
@@ -41,9 +41,9 @@ namespace SnakeAndLadderSimulator
             int throws = 0;
             while (currentPosition < WINNING_POSITION)
             {
-                int numOnDie = rollTheDie();
+                int numOnDie = RollTheDie();
                 throws++;
-                int toAdd = newPosition(numOnDie);
+                int toAdd = NewPosition(numOnDie);
                 //checking if next position will exceed 100
                 if (currentPosition + toAdd > WINNING_POSITION)
                     nextPosition = currentPosition;
