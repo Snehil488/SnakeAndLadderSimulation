@@ -1,30 +1,22 @@
-﻿using System;
+using System;
 
 namespace SnakeAndLadderSimulator
 {
     class Program
     {
+        public const int STARTING_POSITION = 0;
         public const int WINNING_POSITION = 100;
+        //Returns Output Of Die Roll
+        public static int RollTheDie()
+        {
+            Random random = new Random();
+            int numOnDie = random.Next(1, 7);
+            return numOnDie;
+        }
         static void Main(string[] args)
         {
-            Player player1 = new Player();
-            Player player2 = new Player();
-            while (player1.currentPosition < WINNING_POSITION && player2.currentPosition < WINNING_POSITION)
-            {
-                player1.playATurn();
-                player2.playATurn();
-            }
-            if (player1.currentPosition == WINNING_POSITION)
-            {
-                Console.WriteLine("Player 1 Won");
-            }
-            else
-            {
-                Console.WriteLine("Player 2 Won");
-            }
-            Console.WriteLine("Final Position of Player 1 :" + player1.currentPosition);
-            Console.WriteLine("Final Position of Player 2 :" + player2.currentPosition);
-
+            int currentPosition = STARTING_POSITION;
+            int numOnDie = RollTheDie();
         }
     }
 }
