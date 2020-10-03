@@ -11,8 +11,8 @@ namespace SnakeAndLadderSimulator
             Player player2 = new Player();
             while (player1.currentPosition < WINNING_POSITION && player2.currentPosition < WINNING_POSITION)
             {
-                player1.playATurn();
-                player2.playATurn();
+                player1.PlayATurn();
+                player2.PlayATurn();
             }
             if (player1.currentPosition == WINNING_POSITION)
             {
@@ -24,7 +24,6 @@ namespace SnakeAndLadderSimulator
             }
             Console.WriteLine("Final Position of Player 1 :" + player1.currentPosition);
             Console.WriteLine("Final Position of Player 2 :" + player2.currentPosition);
-
         }
     }
 }
