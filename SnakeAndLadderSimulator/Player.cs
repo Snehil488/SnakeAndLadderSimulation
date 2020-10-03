@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,13 +12,13 @@ namespace SnakeAndLadderSimulator
         public const int LADDER = 2;
         public const int SNAKE = 3;
         public int currentPosition = STARTING_POSITION, nextPosition, throws = 0;
-        public int rollTheDie()
+        public int RollTheDie()
         {
             Random random = new Random();
             int numOnDie = random.Next(1, 7);
             return numOnDie;
         }
-        public int newPosition(int numOnDie)
+        public int NewPosition(int numOnDie)
         {
             int toAdd = 0;
             Random random = new Random();
@@ -36,15 +36,15 @@ namespace SnakeAndLadderSimulator
             }
             return toAdd;
         }
-        public void playATurn()
+        public void PlayATurn()
         {
-            int numOnDie = this.rollTheDie();
+            int numOnDie = this.RollTheDie();
             this.throws++;
-            int toAdd = this.newPosition(numOnDie);
+            int toAdd = this.NewPosition(numOnDie);
             //checking if player got ladder, so he rolls the dice again
             if (toAdd > 0)
             {
-                this.playATurn();
+                this.PlayATurn();
             }
             //checking if next position will exceed 100
             if (this.currentPosition + toAdd > WINNING_POSITION)
@@ -67,3 +67,4 @@ namespace SnakeAndLadderSimulator
         }
     }
 }
+
